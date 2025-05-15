@@ -1,0 +1,26 @@
+{
+"comment": "task defination json file
+}
+
+{
+  "requiresCompatibilities": ["FARGATE"],
+  "family": "my-restaurant-task",
+  "networkMode": "awsvpc",
+  "cpu": "1024",
+  "memory": "2048",
+  "executionRoleArn": "ecsTaskExecutionRole",
+  "containerDefinitions": [
+    {
+      "name": "menu-container",
+      "image": "jenkins-docker-test",
+      "portMappings": [
+        {
+          "containerPort": 80,
+          "protocol": "tcp"
+        }
+      ],
+      "essential": true
+    }
+  ],
+  "volumes": []
+}
