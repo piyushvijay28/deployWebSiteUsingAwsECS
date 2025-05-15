@@ -1,0 +1,10 @@
+# Commnad to authenticate Docker
+aws ecr get-login-password --region <region> | docker login --username AWS --password-stdin <aws_account_id>.dkr.ecr.<region>.amazonaws.com
+
+
+# Command to tag Image to the ECR repo
+docker tag <imageID> <aws_account_id>.dkr.ecr.<region>.amazonaws.com/<ecr_repo_name>
+
+
+# Command to push Docker image to ECR
+docker push <aws_account_id>.dkr.ecr.<region>.amazonaws.com/<ecr_repo_name>
